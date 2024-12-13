@@ -25,6 +25,6 @@ jobs:
       run: yarn
 
       name: run tests
-      run:yarn tests
+      run:  run script.js
       
 
