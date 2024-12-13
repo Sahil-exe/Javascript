@@ -1,0 +1,30 @@
+name: Super-Linter
+
+on:push
+  branches:
+    main
+    
+schedule:
+  cron:"0 0 * * *"
+
+
+jobs:
+  run-my-job:
+    runs-on: ubuntu latest
+
+    steps:
+      name: Checkout Code
+      uses: actions/Checksout@v2
+
+      name: Setup javascript
+      uses: actions/setup-javascript@v4
+      #with:
+      # javascript:version
+
+      name: Install dependencies
+      run: yarn
+
+      name: run tests
+      run:yarn tests
+      
+
